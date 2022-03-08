@@ -34,7 +34,31 @@ exports.getTodos = async (req, res) => {
 }
 
 // Create controller get Todo by received id here
+exports.getTodo = async (req, res) => {
+    try {
+        const { id } = req.params
 
+        let todo = todos.find((item) => item.id == id)
+
+        if (!todo) {
+            return res.send({
+                status: "failed",
+                message: "Data not found"
+            })
+        }
+        res.send({
+            status: 'success',
+            data: {
+                todo
+            }
+        })
+    } catch (error) {
+        res.send({
+            status: 'failed',
+            message: 'Server error'
+        })
+    }
+}
 
 // Create controller add Todo here
 

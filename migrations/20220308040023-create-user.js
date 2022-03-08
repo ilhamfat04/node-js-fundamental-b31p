@@ -17,17 +17,17 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      role: {
+      status: {
         type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
-        defaultValue: Sequelize.fn('now'),
+        defaultValue: Sequelize.fn("now"),
         type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
-        defaultValue: Sequelize.fn('now'),
+        defaultValue: Sequelize.fn("now"),
         type: Sequelize.DATE
       }
     });
